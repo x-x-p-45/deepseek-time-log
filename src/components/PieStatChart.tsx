@@ -57,9 +57,9 @@ export function PieStatChart({ data }: PieStatChartProps) {
       const color = item.color || COLORS_FALLBACK[index % COLORS_FALLBACK.length];
 
       return {
+        ...item,
         path: sliceAngle > 0 ? describeArc(CENTER, CENTER, RADIUS, startAngle, endAngle) : '',
         color,
-        ...item,
         // 标签放在扇形中间角度
         midAngle: startAngle + sliceAngle / 2,
       };
